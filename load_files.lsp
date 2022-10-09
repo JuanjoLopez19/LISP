@@ -1,0 +1,5 @@
+(defun load_files ()
+    (load "types.lsp")
+    (load "is_contained.lsp")
+    (load "unify.lsp")
+)
