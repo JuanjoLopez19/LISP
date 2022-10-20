@@ -1,35 +1,15 @@
 
 (defun apply_items (arg1 arg2)  ; (F (? A)) (C X F ((? A) R))
     (prog (value aux substitute item)
-		(terpri)
-		(princ "lista a comprobar ")
-		(write arg1)
-		(terpri)
-		(princ "lista a modificar ")
-		(write arg2)
-		(terpri)
         (when (null arg1) (return arg2))
         (when (null arg2) (return NIL))
 
 		(dolist (value arg1)
-			(princ "Arg1: ")
-			(write value)
-			(terpri)
 
 			(setf substitute (first value))
         	(setf aux (first(rest value)))
-			
-			(princ "1st ele: ")
-			(write substitute)
-			(terpri)
-			(princ "Rest ele: ")
-			(write aux)
-			(terpri)
 
 			(dolist (item arg2)
-				(princ "Elements: ")
-				(write item)
-				(terpri)
 
 				(if (is_list item)
 					(apply_items (list value) item)
